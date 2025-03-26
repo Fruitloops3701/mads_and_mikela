@@ -59,13 +59,30 @@
     0% {
         transform: scale(1) rotate(-45deg);
     }
+    35% {
+        transform: scale(1.1) rotate(-45deg);
+    }
     50% {
+        transform: scale(1) rotate(-45deg);
+    }
+    65% {
         transform: scale(1.1) rotate(-45deg);
     }
     100% {
         transform: scale(1) rotate(-45deg);
     }
 }
+@keyframes shrink-expand {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .shrink-expand {
-    animation: shrink-expand 1s ease-in-out;
+    animation: shrink-expand 0.7s ease-in-out;
 }
