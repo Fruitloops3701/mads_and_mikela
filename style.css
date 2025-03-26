@@ -76,13 +76,13 @@
 }
 @keyframes shrink-expand {
     0% {
-        transform: scale(var(--scale-factor)) rotate(-45deg);
+        transform: scale(var(--scale-factor));
     }
     33% {
-        transform: scale(calc(var(--scale-factor) * 0.95)) rotate(-45deg);
+        transform: scale(calc(var(--scale-factor) * 0.95));
     }
     100% {
-        transform: scale(var(--scale-factor)) rotate(-45deg);
+        transform: scale(var(--scale-factor));
     }
 }
 
