@@ -4,13 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to animate the heart
     function animateHeart() {
-        // Add the animation class
+        // Pause the pulse animation
+        heart.style.animationPlayState = 'paused';
+
+        // Add the shrink-expand animation class
         heart.classList.add("shrink-expand");
 
-        // Remove the animation class after 1 second
+        // Remove the shrink-expand animation class after 0.5 seconds
         setTimeout(() => {
             heart.classList.remove("shrink-expand");
-        }, 1000);
+            // Resume the pulse animation
+            heart.style.animationPlayState = 'running';
+        }, 500);
     }
 
     // Add an event listener to the button to animate the heart when clicked
