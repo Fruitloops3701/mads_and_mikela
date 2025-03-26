@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to animate the heart
     function animateHeart() {
         // Pause the pulse animation
-        heart.style.animationPlayState = 'paused';
 
         // Add the shrink-expand animation class
         heart.classList.add("shrink-expand");
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             heart.classList.remove("shrink-expand");
             // Resume the pulse animation
-            heart.style.animationPlayState = 'running';
         }, 500);
     }
 
