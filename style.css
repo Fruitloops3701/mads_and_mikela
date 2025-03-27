@@ -7,6 +7,10 @@
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
 }
 .heart {
     position: relative;
@@ -79,7 +83,7 @@
         transform: scale(var(--scale-factor));
     }
     33% {
-        transform: scale(calc(var(--scale-factor) * 0.95));
+        transform: scale(calc(var(--scale-factor) * 1.05));
     }
     100% {
         transform: scale(var(--scale-factor));
