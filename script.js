@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             heart.classList.remove("shrink-expand");
             // Resume the pulse animation
             //heart.style.animationPlayState = 'running';
-        }, 500);
+        }, 300);
     }
 
     // Add an event listener to the button to animate the heart when clicked
