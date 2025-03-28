@@ -20,11 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
         createTextPieces();
     }
 
-    // Add an event listener to the button to animate the heart when clicked
-    const surpriseBtn = document.getElementById("surprise-btn");
-
-    surpriseBtn.addEventListener("click", animateHeart);
-    
     // Function to create and animate text pieces
     function createTextPieces() {
         const textContainer = document.getElementById("text-container");
@@ -51,7 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const x = distance * Math.cos(angle * Math.PI / 180);
             const y = distance * Math.sin(angle * Math.PI / 180);
 
-            textPiece.style.transform = `translate(${x}px, ${y}px)`;
+            // Use CSS variables for animation
+            textPiece.style.setProperty('--x', `${x}px`);
+            textPiece.style.setProperty('--y', `${y}px`);
 
             // Remove the text piece after the animation ends
             setTimeout(() => {
@@ -59,4 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 3000);
         });
     }
+
+    // Add an event listener to the button to animate the heart and text pieces when clicked
+    const surpriseBtn = document.getElementById("surprise-btn");
+    surpriseBtn.addEventListener("click", animateHeart);
 });
