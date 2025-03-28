@@ -43,8 +43,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 3000);
         });
     }
-
-    // Add an event listener to the button to animate the heart and text pieces when clicked
-    const surpriseBtn = document.getElementById("surprise-btn");
-    surpriseBtn.addEventListener("click", animateHeart);
 });
