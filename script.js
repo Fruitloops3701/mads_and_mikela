@@ -23,13 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to create and animate text pieces
     function createTextPieces() {
         const textContainer = document.getElementById("text-container");
-        const texts = ["❤️", "🌟", "🎉", "😍", "💖"];
+        const texts = ["💙", "🧡", "🎉", "😍", "💖"];
         const heartRect = heart.getBoundingClientRect();
 
-        texts.forEach(text => {
+        for (let i = 0; i < 10; i++) {
             const textPiece = document.createElement("div");
             textPiece.className = "text-piece";
-            textPiece.textContent = text;
+            const randomText = texts[Math.floor(Math.random() * texts.length)];
+            textPiece.textContent = randomText;
 
             // Set the initial position to the center of the heart
             const initialX = heartRect.left + heartRect.width / 2;
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(() => {
                 textPiece.remove();
             }, 3000);
-        });
+        }
     }
 
     // Add an event listener to the button to animate the heart and text pieces when clicked
