@@ -58,7 +58,11 @@ h1, p {
     top: 0;
     left: 50px;
 }
-
+.text-piece {
+    position: absolute;
+    font-size: 20px;
+    animation: jump 1s ease-out, fall 2s ease-in 1s forwards;
+}
 #surprise-btn {
     background: #2a65a8;
     color: white;
@@ -103,6 +107,28 @@ h1, p {
     }
     100% {
         transform: scale(1) rotate(-45deg);
+    }
+}
+@keyframes jump {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(200px);
+        opacity: 0;
     }
 }
 
