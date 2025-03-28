@@ -112,22 +112,22 @@ h1, p {
 @keyframes jump {
     0% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(0, 0);
     }
     50% {
-        transform: translateY(-100px);
+        transform: translate(var(--x), var(--y));
     }
     100% {
-        transform: translateY(0);
+        transform: translate(var(--x), var(--y));
     }
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(0);
+        transform: translate(var(--x), var(--y));
     }
     100% {
-        transform: translateY(200px);
+        transform: translate(var(--x), calc(var(--y) + 200px));
         opacity: 0;
     }
 }

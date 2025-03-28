@@ -29,13 +29,29 @@ document.addEventListener("DOMContentLoaded", function() {
     function createTextPieces() {
         const textContainer = document.getElementById("text-container");
         const texts = ["❤️", "🌟", "🎉", "😍", "💖"];
+        const heartRect = heart.getBoundingClientRect();
+
         texts.forEach(text => {
             const textPiece = document.createElement("div");
             textPiece.className = "text-piece";
             textPiece.textContent = text;
-            textPiece.style.left = `${Math.random() * 100}%`;
-            textPiece.style.top = `${Math.random() * 100}%`;
+
+            // Set the initial position to the center of the heart
+            const initialX = heartRect.left + heartRect.width / 2;
+            const initialY = heartRect.top + heartRect.height / 2;
+            textPiece.style.left = `${initialX}px`;
+            textPiece.style.top = `${initialY}px`;
+
+            // Append the text piece to the container
             textContainer.appendChild(textPiece);
+
+            // Apply random trajectory and animation
+            const angle = Math.random() * 360;
+            const distance = Math.random() * 100 + 50; // Random distance between 50 and 150 pixels
+            const x = distance * Math.cos(angle * Math.PI / 180);
+            const y = distance * Math.sin(angle * Math.PI / 180);
+
+            textPiece.style.transform = `translate(${x}px, ${y}px)`;
 
             // Remove the text piece after the animation ends
             setTimeout(() => {
